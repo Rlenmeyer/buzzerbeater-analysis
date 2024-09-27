@@ -1,12 +1,15 @@
 import os
+from dotenv import load_dotenv
 import requests
 
+# Charger les variables d'environnement depuis le fichier .env
+load_dotenv()
+
 def fetch_roster(team_id):
-    # Lire la clé API à partir de la variable d'environnement
     api_key = os.getenv('BUZZERBEATER_API_KEY')
 
     if not api_key:
-        raise ValueError("La clé API est manquante. Veuillez la définir comme variable d'environnement.")
+        raise ValueError("La clé API est manquante. Veuillez la définir dans un fichier .env ou comme variable d'environnement.")
 
     url = f"http://bbapi.buzzerbeater.com/roster.aspx?teamid={team_id}&code={api_key}"
     response = requests.get(url)
