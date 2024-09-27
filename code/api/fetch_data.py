@@ -13,25 +13,41 @@ def fetch_roster(team_id):
     if not api_key:
         raise ValueError("La clé API est manquante. Veuillez la définir dans un fichier .env ou comme variable d'environnement.")
     
-    # Générer un UUID pour le fichier
-    unique_id = uuid.uuid4()
+    # URL de base de l'API
+    BASE_URL = "http://bbapi.buzzerbeater.com"
 
-    # Obtenir la date actuelle au format YYYYMMDD
-    current_date = datetime.now().strftime('%Y%m%d')
+    # Utiliser une session HTTP
+    with requests.Session() as session:
+        # Requête de login
+        login_url = f"{BASE_URL}/login.aspx?login=Treex&code={api_key}"
+        response = session.get(login_url)
+        if response.status_code != 200:
+            raise Exception(f"Erreur lors de la connexion : {response.status_code}, réponse : {response.text}")
 
-    # Créer un nom de fichier unique avec UUID, team_id, et date
-    file_name = f"{unique_id}_roster_{team_id}_{current_date}.xml"
+        # Générer un UUID pour le fichier
+        unique_id = uuid.uuid4()
+        # Obtenir la date actuelle au format YYYYMMDD
+        current_date = datetime.now().strftime('%Y%m%d')
+        # Créer un nom de fichier unique avec UUID, team_id, et date
+        file_name = f"{unique_id}_roster_{team_id}_{current_date}.xml"
 
-    url = f"http://bbapi.buzzerbeater.com/roster.aspx?teamid={team_id}&code={api_key}"
-    response = requests.get(url)
+        # Requête pour récupérer le roster
+        roster_url = f"{BASE_URL}/roster.aspx?teamid={team_id}"
+        response = session.get(roster_url)
+        if response.status_code == 200:
+            with open(f'data/xml/{file_name}', 'wb') as file:
+                file.write(response.content)
+            print(f"Données du roster récupérées avec succès dans {file_name}.")
+        else:
+            print(f"Erreur lors de la récupération des données : {response.status_code}, réponse : {response.text}")
 
-    if response.status_code == 200:
-        
-        with open(f'data/xml/{file_name}', 'wb') as file:
-            file.write(response.content)
-        print("Données du roster récupérées avec succès.")
-    else:
-        print(f"Erreur lors de la récupération des données : {response.status_code}")
+        # Requête de logout
+        logout_url = f"{BASE_URL}/logout.aspx?login=Treex&code={api_key}"
+        response = session.get(logout_url)
+        if response.status_code == 200:
+            print("Déconnexion réussie.")
+        else:
+            print(f"Erreur lors de la déconnexion : {response.status_code}, réponse : {response.text}")
 
 # Exemple d'utilisation
 if __name__ == '__main__':
