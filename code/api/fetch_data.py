@@ -51,7 +51,7 @@ def fetch_roster(team_id):
             
         return file_path
 
-# Exemple d'utilisation
+# test fetch_roster
 if __name__ == '__main__':
     team_id = '259167'
     fetch_roster(team_id)
@@ -103,7 +103,7 @@ def fetch_schedule(team_id):
             
         return file_path
 
-# Exemple d'utilisation
+# test fetch_schedule
 if __name__ == '__main__':
     team_id = '259167'
     fetch_schedule(team_id)
