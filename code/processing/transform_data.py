@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import pandas as pd
 
-def transform_roster(xml_file_path, save_csv=False, csv_file_path='data/csv/roster.csv'):
+def transform_roster(xml_file_path, save_csv=False, csv_file_path='data/csv/roster_259167.csv'):
     """
     Transforme le fichier XML du roster en DataFrame et en option, sauvegarde en CSV.
     
@@ -67,5 +67,54 @@ def transform_roster(xml_file_path, save_csv=False, csv_file_path='data/csv/rost
 
 # Exemple d'utilisation
 if __name__ == '__main__':
-    df = transform_roster('data/xml/roster.xml', save_csv=True)
+    df = transform_roster('data/xml/roster_259167.xml', save_csv=True)
+    print(df)
+
+def transform_schedule(xml_file_path, save_csv=False, csv_file_path='data/csv/schedule_259167.csv'):
+    """
+    Transforme le fichier XML du calendrier des matchs en DataFrame et en option, sauvegarde en CSV.
+    
+    :param xml_file_path: Chemin vers le fichier XML du calendrier des matchs.
+    :param save_csv: Si True, enregistre les données en CSV (par défaut False).
+    :param csv_file_path: Chemin du fichier CSV de sortie (utilisé si save_csv=True).
+    :return: DataFrame des données des matchs.
+    """
+    
+    # Charger le fichier XML
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+
+    # Créer une liste vide pour stocker les données des matchs
+    matches_data = []
+
+    # Parcourir chaque match dans le fichier XML
+    for match in root.findall(".//match"):
+        match_info = {
+            'match_id': match.attrib['id'],
+            'start': match.attrib['start'],
+            'type': match.attrib['type'],
+            'away_team_id': match.find('awayTeam').attrib['id'],
+            'away_team_name': match.find('awayTeam/teamName').text,
+            'away_team_score': match.find('awayTeam/score').text if match.find('awayTeam/score') is not None else None,
+            'home_team_id': match.find('homeTeam').attrib['id'],
+            'home_team_name': match.find('homeTeam/teamName').text,
+            'home_team_score': match.find('homeTeam/score').text if match.find('homeTeam/score') is not None else None
+        }
+
+        # Ajouter les informations du match à la liste
+        matches_data.append(match_info)
+
+    # Convertir la liste en DataFrame
+    df = pd.DataFrame(matches_data)
+
+    # Si save_csv est True, enregistrer le DataFrame dans un fichier CSV
+    if save_csv:
+        df.to_csv(csv_file_path, index=False)
+        print(f"Données du calendrier enregistrées dans le fichier {csv_file_path}")
+
+    return df
+
+# Exemple d'utilisation
+if __name__ == '__main__':
+    df = transform_schedule('data/xml/schedule_259167.xml', save_csv=True)
     print(df)
