@@ -1,0 +1,5 @@
+arena_name,seat_type,capacity,current_price,next_price
+La tanière,bleachers,12000,8.0,10.0
+La tanière,lowerTier,2300,25.0,35.0
+La tanière,courtside,500,74.0,100.0
+La tanière,luxury,50,400.0,800.0

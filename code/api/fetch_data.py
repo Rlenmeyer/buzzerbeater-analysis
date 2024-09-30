@@ -159,3 +159,107 @@ def fetch_standings(team_id):
 if __name__ == '__main__':
     team_id = '259167'
     fetch_standings(team_id)
+    
+def fetch_arena(team_id):
+    api_key = os.getenv('BUZZERBEATER_API_KEY')
+
+    if not api_key:
+        raise ValueError("La clé API est manquante. Veuillez la définir dans un fichier .env ou comme variable d'environnement.")
+    
+    # URL de base de l'API
+    BASE_URL = "http://bbapi.buzzerbeater.com"
+
+    # Utiliser une session HTTP
+    with requests.Session() as session:
+        # Requête de login
+        login_url = f"{BASE_URL}/login.aspx?login=Treex&code={api_key}"
+        response = session.get(login_url)
+        if response.status_code != 200:
+            raise Exception(f"Erreur lors de la connexion : {response.status_code}, réponse : {response.text}")
+
+        # Générer un UUID pour le fichier
+        unique_id = uuid.uuid4()
+        
+        # Obtenir la date actuelle au format YYYYMMDD
+        current_date = datetime.now().strftime('%Y%m%d')
+        
+        # Créer un nom de fichier unique avec UUID, team_id, et date
+        file_name = f"{unique_id}_arena_{team_id}_{current_date}.xml"
+        file_path = f'data/xml/{file_name}'
+        
+        # Requête pour récupérer le classement
+        arena_url = f"{BASE_URL}/arena.aspx?teamid={team_id}"
+        response = session.get(arena_url)
+        if response.status_code == 200:
+            with open(file_path, 'wb') as file:
+                file.write(response.content)
+            print(f"Données de l'arena récupérées avec succès dans {file_name}.")
+        else:
+            print(f"Erreur lors de la récupération des données : {response.status_code}, réponse : {response.text}")
+
+        # Requête de logout
+        logout_url = f"{BASE_URL}/logout.aspx?login=Treex&code={api_key}"
+        response = session.get(logout_url)
+        if response.status_code == 200:
+            print("Déconnexion réussie.")
+        else:
+            print(f"Erreur lors de la déconnexion : {response.status_code}, réponse : {response.text}")
+            
+        return file_path
+
+# test fetch_standings
+if __name__ == '__main__':
+    team_id = '259167'
+    fetch_arena(team_id)
+
+def fetch_teaminfo(team_id):
+    api_key = os.getenv('BUZZERBEATER_API_KEY')
+
+    if not api_key:
+        raise ValueError("La clé API est manquante. Veuillez la définir dans un fichier .env ou comme variable d'environnement.")
+    
+    # URL de base de l'API
+    BASE_URL = "http://bbapi.buzzerbeater.com"
+
+    # Utiliser une session HTTP
+    with requests.Session() as session:
+        # Requête de login
+        login_url = f"{BASE_URL}/login.aspx?login=Treex&code={api_key}"
+        response = session.get(login_url)
+        if response.status_code != 200:
+            raise Exception(f"Erreur lors de la connexion : {response.status_code}, réponse : {response.text}")
+
+        # Générer un UUID pour le fichier
+        unique_id = uuid.uuid4()
+        
+        # Obtenir la date actuelle au format YYYYMMDD
+        current_date = datetime.now().strftime('%Y%m%d')
+        
+        # Créer un nom de fichier unique avec UUID, team_id, et date
+        file_name = f"{unique_id}_teaminfo_{team_id}_{current_date}.xml"
+        file_path = f'data/xml/{file_name}'
+        
+        # Requête pour récupérer le classement
+        teaminfo_url = f"{BASE_URL}/teaminfo.aspx?teamid={team_id}"
+        response = session.get(teaminfo_url)
+        if response.status_code == 200:
+            with open(file_path, 'wb') as file:
+                file.write(response.content)
+            print(f"Données de teaminfo récupérées avec succès dans {file_name}.")
+        else:
+            print(f"Erreur lors de la récupération des données : {response.status_code}, réponse : {response.text}")
+
+        # Requête de logout
+        logout_url = f"{BASE_URL}/logout.aspx?login=Treex&code={api_key}"
+        response = session.get(logout_url)
+        if response.status_code == 200:
+            print("Déconnexion réussie.")
+        else:
+            print(f"Erreur lors de la déconnexion : {response.status_code}, réponse : {response.text}")
+            
+        return file_path
+
+# test fetch_standings
+if __name__ == '__main__':
+    team_id = '259167'
+    fetch_teaminfo(team_id)

@@ -40,7 +40,6 @@ All the BBAPI pages live in the directory http://bbapi.buzzerbeater.com/; for in
 
 login.aspx
 Must be visited at the beginning of each session.
-
 Parameters
 login: The login name — remember to URL-encode it properly!
 code: The read-only password.
@@ -49,27 +48,29 @@ quickinfo: If set to 1, returns the contents of this users' TeamInfo page and do
 Errors
 NotAuthorized: wrong login name / security code combination.
 ServerError
+
+
 logout.aspx
 Closes the current session, and invalidates the current authentication cookie.
-
 Parameters
 None
-
 Errors
 NotAuthorized
 ServerError
+
+
 arena.aspx
 Retrieves data about the arena of the specified team, including the number of seats, current and planned prices, and expansion status.
-
 Parameters
 teamid: If not specified, defaults to the team ID of the current user.
 Errors
 UnknownTeamID: the specified team ID does not exist.
 NotAuthorized
 ServerError
+
+
 boxscore.aspx
 Retrieves data about the specified match, including team strategies, offensive efficiency measurements and player performances.
-
 Parameters
 matchid: If not specified, defaults to the last finished game played by the current user.
 Errors
@@ -77,27 +78,29 @@ UnknownMatchID: the specified match ID does not exist.
 BoxscoreNotAvailable: the match has not been completed yet. Boxscores are usually available immediately after the end of the game, but in some cases there might be a small delay.
 NotAuthorized
 ServerError
+
+
 economy.aspx
 Retrieves data about the economy situation of the current team. Shows all the economic transactions that took place in the last two weeks, including salaries, transfer incomes/expenses and match revenues.
-
 Parameters
 No parameters are needed.
-
 Errors
 NotAuthorized
 ServerError
+
+
 roster.aspx
 Retrieves informations about the players belonging to the specified team.
-
 Parameters
 teamid: If not specified, defaults to the team ID of the current user.
 Errors
 UnknownTeamID
 NotAuthorized
 ServerError
+
+
 player.aspx
 Retrieves informations about a player.
-
 Parameters
 playerid: Mandatory.
 Errors
@@ -105,9 +108,10 @@ UnknownPlayerID: playerid is either missing or invalid.
 UnknownStaffID: staffid is either missing or invalid.
 NotAuthorized
 ServerError
+
+
 schedule.aspx
 Retrieves the list of all the matches scheduled for the specified season, including the score of all the finished games.
-
 Parameters
 teamid: If not specified, defaults to the team ID of the current user.
 season: If not specified, defaults to the current season.
@@ -116,18 +120,19 @@ UnknownTeamID
 UnknownSeason
 NotAuthorized
 ServerError
+
+
 seasons.aspx
 Retrieves a list of all the seasons, including start and finish dates.
-
 Parameters
 None
-
 Errors
 NotAuthorized
 ServerError
+
+
 standings.aspx
 Retrieves the standings of a given league for the specified season, including regular season standings and, if available, results of the playoff games.
-
 Parameters
 leagueid: If not specified, defaults to the ID of the league the current user is in.
 season: If not specified, defaults to the current season.
@@ -136,18 +141,20 @@ UnknownLeagueID
 UnknownSeason
 NotAuthorized
 ServerError
+
+
 teaminfo.aspx
 Retrieves basic informations about a team, including its name and the alias of the owner.
-
 Parameters
 teamid: If not specified, defaults to the team ID of the current user.
 Errors
 UnknownTeamID
 NotAuthorized
 ServerError
+
+
 teamstats.aspx
 Retrieves in-game statistics for a given player in a specified season, including games played and averages.
-
 Parameters
 teamid: If not specified, defaults to the team ID of the current user.
 season: If not specified, defaults to the current season.
@@ -157,17 +164,18 @@ UnknownTeamID
 UnknownSeason
 NotAuthorized
 ServerError
+
+
 countries.aspx
 Retrieves the list of all the acrive countries.
-
 Parameters
 None
 Errors
 NotAuthorized
 ServerError
+
 leagues.aspx
 Retrieves the list of all the leagues at a given level for the specified country.
-
 Parameters
 countryid: Mandatory.
 level: Mandatory.

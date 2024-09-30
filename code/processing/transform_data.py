@@ -168,3 +168,100 @@ def transform_standings(xml_file_path, save_csv=False, csv_file_path='data/csv/s
 if __name__ == '__main__':
     df = transform_standings('data/xml/standings_259167.xml', save_csv=True)
     print(df)
+
+def transform_arena(xml_file_path, save_csv=False, csv_file_path='data/csv/arena_259167.csv'):
+    """
+    Transforme le fichier XML de l'arène en DataFrame et en option, sauvegarde en CSV.
+    
+    :param xml_file_path: Chemin vers le fichier XML de l'arène.
+    :param save_csv: Si True, enregistre les données en CSV (par défaut False).
+    :param csv_file_path: Chemin du fichier CSV de sortie (utilisé si save_csv=True).
+    :return: DataFrame des informations de l'arène.
+    """
+    
+    # Charger le fichier XML
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+
+    # Récupérer le nom de l'arène
+    arena_name = root.find("arena/name").text
+
+    # Créer une liste vide pour stocker les données des sièges
+    seats_data = []
+
+    # Parcourir chaque type de siège dans l'arène
+    for seat in root.findall(".//seats/*"):
+        seat_info = {
+            'arena_name': arena_name,
+            'seat_type': seat.tag,
+            'capacity': int(seat.text),
+            'current_price': float(seat.attrib['price']),
+            'next_price': float(seat.attrib['nextPrice'])
+        }
+
+        # Ajouter les informations des sièges à la liste
+        seats_data.append(seat_info)
+
+    # Convertir la liste en DataFrame
+    df = pd.DataFrame(seats_data)
+
+    # Si save_csv est True, enregistrer le DataFrame dans un fichier CSV
+    if save_csv:
+        df.to_csv(csv_file_path, index=False)
+        print(f"Données de l'arène enregistrées dans le fichier {csv_file_path}")
+
+    return df
+
+# Exemple d'utilisation
+if __name__ == '__main__':
+    df = transform_arena('data/xml/arena_259167.xml', save_csv=True)
+    print(df)
+
+
+def transform_team_info(xml_file_path, save_csv=False, csv_file_path='data/csv/teaminfo_259167.csv'):
+    """
+    Transforme le fichier XML des informations de l'équipe en DataFrame et en option, sauvegarde en CSV.
+    
+    :param xml_file_path: Chemin vers le fichier XML des informations de l'équipe.
+    :param save_csv: Si True, enregistre les données en CSV (par défaut False).
+    :param csv_file_path: Chemin du fichier CSV de sortie (utilisé si save_csv=True).
+    :return: DataFrame des informations de l'équipe.
+    """
+    
+    # Charger le fichier XML
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+    team_element = root.find("team")
+
+    # Extraire les informations de l'équipe
+    team_info = {
+        'team_id': root.find('team').attrib['id'],
+        'team_name': team_element.find('teamName').text,
+        'short_name': team_element.find('shortName').text,
+        'owner': team_element.find('owner').text,
+        'supporter': team_element.find('owner').attrib['supporter'],
+        'create_date': team_element.find('createDate').text,
+        'last_login_date': team_element.find('lastLoginDate').text,
+        'league_id': team_element.find('league').attrib['id'],
+        'league_name': team_element.find('league').text,
+        'league_level': team_element.find('league').attrib['level'],
+        'country': team_element.find('country').text,
+        'country_id': team_element.find('country').attrib['id'],
+        'rival_team_id': team_element.find('rival').attrib['id'],
+        'rival_team_name': team_element.find('rival').text
+    }
+
+    # Convertir les informations de l'équipe en DataFrame
+    df = pd.DataFrame([team_info])
+
+    # Si save_csv est True, enregistrer le DataFrame dans un fichier CSV
+    if save_csv:
+        df.to_csv(csv_file_path, index=False)
+        print(f"Données de l'équipe enregistrées dans le fichier {csv_file_path}")
+
+    return df
+
+# Exemple d'utilisation
+if __name__ == '__main__':
+    df = transform_team_info('data/xml/teaminfo_259167.xml', save_csv=True)
+    print(df)

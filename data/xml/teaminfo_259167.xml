@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bbapi version='1'>
+    <team id='259167' retrieved='2024-09-30T16:24:37Z'>
+        <teamName>FoxTreex</teamName>
+        <shortName>FOX</shortName>
+        
+        <owner supporter='1'>Lalki</owner>
+        <createDate>2022-06-27T19:25:00Z</createDate>
+        <lastLoginDate>2024-09-30T14:18:55Z</lastLoginDate>
+        
+        <league id='280' level='3'>III.1</league>
+        <country id='11'>France</country>
+        <rival id='85742'>Shadow Team</rival>
+    </team>
+</bbapi>

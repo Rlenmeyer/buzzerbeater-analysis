@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bbapi version='1'>
+    <standings season='66' retrieved='2024-09-30T16:23:27Z'>
+        <league id='280' level='3'>III.1</league>
+        <country id='11'>France</country>
+        <regularSeason>
+            <conference>
+                <team id='27215'>
+                    <teamName>Cordoba Esperanza</teamName>
+                    <wins>3</wins>
+                    <losses>0</losses>
+                    <pf>359</pf>
+                    <pa>289</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='85742'>
+                    <teamName>Shadow Team</teamName>
+                    <wins>3</wins>
+                    <losses>0</losses>
+                    <pf>299</pf>
+                    <pa>259</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='86366'>
+                    <teamName>Sonics de Seattle</teamName>
+                    <wins>2</wins>
+                    <losses>1</losses>
+                    <pf>304</pf>
+                    <pa>285</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='87851'>
+                    <teamName>NinetyFivers</teamName>
+                    <wins>2</wins>
+                    <losses>1</losses>
+                    <pf>327</pf>
+                    <pa>311</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='87506'>
+                    <teamName>Deadpool</teamName>
+                    <wins>2</wins>
+                    <losses>1</losses>
+                    <pf>338</pf>
+                    <pa>350</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='259167'>
+                    <teamName>FoxTreex</teamName>
+                    <wins>0</wins>
+                    <losses>3</losses>
+                    <pf>318</pf>
+                    <pa>338</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='87268'>
+                    <teamName>Les Pitbulls du 91</teamName>
+                    <wins>0</wins>
+                    <losses>3</losses>
+                    <pf>305</pf>
+                    <pa>351</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='85427'>
+                    <teamName>preachers</teamName>
+                    <wins>0</wins>
+                    <losses>3</losses>
+                    <pf>223</pf>
+                    <pa>290</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team>
+            </conference>
+            <conference>
+                <team id='85421'>
+                    <teamName>Feufoleys</teamName>
+                    <wins>3</wins>
+                    <losses>0</losses>
+                    <pf>366</pf>
+                    <pa>276</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='258173'>
+                    <teamName>Thumesniloise</teamName>
+                    <wins>3</wins>
+                    <losses>0</losses>
+                    <pf>327</pf>
+                    <pa>267</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='85559'>
+                    <teamName>Stade Clermontois Basket</teamName>
+                    <wins>2</wins>
+                    <losses>1</losses>
+                    <pf>333</pf>
+                    <pa>316</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='87029'>
+                    <teamName>Abbeville BB</teamName>
+                    <wins>1</wins>
+                    <losses>2</losses>
+                    <pf>308</pf>
+                    <pa>330</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='86148'>
+                    <teamName>Caraman basket club</teamName>
+                    <wins>1</wins>
+                    <losses>2</losses>
+                    <pf>290</pf>
+                    <pa>314</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='253096'>
+                    <teamName>Angers Sphinx</teamName>
+                    <wins>1</wins>
+                    <losses>2</losses>
+                    <pf>279</pf>
+                    <pa>310</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='84809'>
+                    <teamName>LEre Quin</teamName>
+                    <wins>1</wins>
+                    <losses>2</losses>
+                    <pf>268</pf>
+                    <pa>313</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team><team id='86097'>
+                    <teamName>SQBB2</teamName>
+                    <wins>0</wins>
+                    <losses>3</losses>
+                    <pf>241</pf>
+                    <pa>286</pa>
+                    <isBot>0</isBot>
+                    <forfeits>0</forfeits>
+                </team>
+            </conference>
+        </regularSeason>
+        
+        
+        
+    </standings>
+</bbapi>
