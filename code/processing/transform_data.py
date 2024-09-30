@@ -118,3 +118,53 @@ def transform_schedule(xml_file_path, save_csv=False, csv_file_path='data/csv/sc
 if __name__ == '__main__':
     df = transform_schedule('data/xml/schedule_259167.xml', save_csv=True)
     print(df)
+
+def transform_standings(xml_file_path, save_csv=False, csv_file_path='data/csv/standings_259167.csv'):
+    """
+    Transforme le fichier XML des standings en DataFrame et en option, sauvegarde en CSV.
+    
+    :param xml_file_path: Chemin vers le fichier XML des standings.
+    :param save_csv: Si True, enregistre les données en CSV (par défaut False).
+    :param csv_file_path: Chemin du fichier CSV de sortie (utilisé si save_csv=True).
+    :return: DataFrame des standings.
+    """
+    
+    # Charger le fichier XML
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+
+    # Créer une liste vide pour stocker les données des équipes
+    standings_data = []
+
+    # Parcourir chaque conférence dans le fichier XML
+    for conference in root.findall(".//conference"):
+        # Parcourir chaque équipe dans la conférence
+        for team in conference.findall("team"):
+            team_info = {
+                'team_id': team.attrib['id'],
+                'team_name': team.find('teamName').text,
+                'wins': int(team.find('wins').text),
+                'losses': int(team.find('losses').text),
+                'pf': int(team.find('pf').text),  # points marqués
+                'pa': int(team.find('pa').text),  # points encaissés
+                'is_bot': int(team.find('isBot').text),
+                'forfeits': int(team.find('forfeits').text)
+            }
+
+            # Ajouter les informations de l'équipe à la liste
+            standings_data.append(team_info)
+
+    # Convertir la liste en DataFrame
+    df = pd.DataFrame(standings_data)
+
+    # Si save_csv est True, enregistrer le DataFrame dans un fichier CSV
+    if save_csv:
+        df.to_csv(csv_file_path, index=False)
+        print(f"Données des standings enregistrées dans le fichier {csv_file_path}")
+
+    return df
+
+# Exemple d'utilisation
+if __name__ == '__main__':
+    df = transform_standings('data/xml/standings_259167.xml', save_csv=True)
+    print(df)
