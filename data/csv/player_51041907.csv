@@ -1,0 +1,2 @@
+player_id,owner_id,retrieved_date,first_name,last_name,nationality,nationality_id,age,height,dmi,jersey,salary,best_position,season_drafted,league_drafted,team_drafted,draft_pick,for_sale,game_shape,potential,jump_shot,range,outside_defense,handling,driving,passing,inside_shot,inside_defense,rebound,block,stamina,free_throw,experience
+51041907,259167,2024-10-01T09:34:33Z,Régis,Leite,France,11,26,83,197800,3,57043,PF,57,822,259167,10,0,6,7,11,5,14,16,17,12,12,16,12,10,4,9,9

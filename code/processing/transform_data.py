@@ -395,3 +395,127 @@ def transform_team_stats(xml_file_path, save_csv=False, csv_file_path='data/csv/
 if __name__ == '__main__':
     df = transform_team_stats('data/xml/teamstats_259167.xml', save_csv=True)
     print(df)
+
+
+def transform_economy(xml_file_path, save_csv=False, csv_file_path='data/csv/economy_259167.csv'):
+    """
+    Transforme le fichier XML de l'économie en DataFrame et en option, sauvegarde en CSV.
+    
+    :param xml_file_path: Chemin vers le fichier XML de l'économie.
+    :param save_csv: Si True, enregistre les données en CSV (par défaut False).
+    :param csv_file_path: Chemin du fichier CSV de sortie (utilisé si save_csv=True).
+    :return: DataFrame des transactions économiques.
+    """
+    
+    # Charger le fichier XML
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+
+    # Créer une liste vide pour stocker les données économiques
+    economy_data = []
+
+    # Parcourir les informations de la semaine précédente et de la semaine en cours
+    for week in root.findall(".//lastWeek") + root.findall(".//thisWeek"):
+        week_info = {
+            'week_type': 'lastWeek' if week.tag == 'lastWeek' else 'thisWeek',
+            'start_date': week.attrib['start'],
+            'initial_balance': int(week.find('initial').text),
+            'player_salaries': int(week.find('playerSalaries').text),
+            'staff_salaries': int(week.find('staffSalaries').text),
+            'merchandise': int(week.find('merchandise').text),
+            'scouting': int(week.find('scouting').text),
+            'tv_money': int(week.find('tvMoney').text),
+            'unknown': int(week.find('unknown').text),
+            'final_balance': int(week.find('final').text) if week.find('final') is not None else None,
+            'current_balance': int(week.find('current').text) if week.find('current') is not None else None
+        }
+
+        # Ajouter les revenus des matchs (il peut y avoir plusieurs éléments matchRevenue)
+        match_revenues = week.findall('matchRevenue')
+        total_match_revenue = sum(int(revenue.text) for revenue in match_revenues)
+        week_info['match_revenue_total'] = total_match_revenue
+
+        # Ajouter les informations de la semaine à la liste
+        economy_data.append(week_info)
+
+    # Convertir la liste en DataFrame
+    df = pd.DataFrame(economy_data)
+
+    # Si save_csv est True, enregistrer le DataFrame dans un fichier CSV
+    if save_csv:
+        df.to_csv(csv_file_path, index=False)
+        print(f"Données économiques enregistrées dans le fichier {csv_file_path}")
+
+    return df
+
+# Exemple d'utilisation
+if __name__ == '__main__':
+    df = transform_economy('data/xml/economy_259167.xml', save_csv=True)
+    print(df)
+
+
+def transform_player(xml_file_path, save_csv=False, csv_file_path='data/csv/player_51041907.csv'):
+    """
+    Transforme le fichier XML du joueur en DataFrame et en option, sauvegarde en CSV.
+    
+    :param xml_file_path: Chemin vers le fichier XML du joueur.
+    :param save_csv: Si True, enregistre les données en CSV (par défaut False).
+    :param csv_file_path: Chemin du fichier CSV de sortie (utilisé si save_csv=True).
+    :return: DataFrame des informations du joueur.
+    """
+    
+    # Charger le fichier XML
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+    player_element = root.find("player")
+    # Extraire les informations du joueur
+    player_info = {
+        'player_id': player_element.attrib['id'],
+        'owner_id': player_element.attrib['owner'],
+        'retrieved_date': player_element.attrib['retrieved'],
+        'first_name': player_element.find('firstName').text,
+        'last_name': player_element.find('lastName').text,
+        'nationality': player_element.find('nationality').text,
+        'nationality_id': player_element.find('nationality').attrib['id'],
+        'age': int(player_element.find('age').text),
+        'height': int(player_element.find('height').text),
+        'dmi': int(player_element.find('dmi').text),
+        'jersey': int(player_element.find('jersey').text),
+        'salary': int(player_element.find('salary').text),
+        'best_position': player_element.find('bestPosition').text,
+        'season_drafted': int(player_element.find('seasonDrafted').text),
+        'league_drafted': int(player_element.find('leagueDrafted').text),
+        'team_drafted': player_element.find('teamDrafted').text,
+        'draft_pick': int(player_element.find('draftPick').text),
+        'for_sale': int(player_element.find('forSale').text),
+        'game_shape': int(player_element.find('skills/gameShape').text),
+        'potential': int(player_element.find('skills/potential').text),
+        'jump_shot': int(player_element.find('skills/jumpShot').text),
+        'range': int(player_element.find('skills/range').text),
+        'outside_defense': int(player_element.find('skills/outsideDef').text),
+        'handling': int(player_element.find('skills/handling').text),
+        'driving': int(player_element.find('skills/driving').text),
+        'passing': int(player_element.find('skills/passing').text),
+        'inside_shot': int(player_element.find('skills/insideShot').text),
+        'inside_defense': int(player_element.find('skills/insideDef').text),
+        'rebound': int(player_element.find('skills/rebound').text),
+        'block': int(player_element.find('skills/block').text),
+        'stamina': int(player_element.find('skills/stamina').text),
+        'free_throw': int(player_element.find('skills/freeThrow').text),
+        'experience': int(player_element.find('skills/experience').text)
+    }
+
+    # Convertir les informations du joueur en DataFrame
+    df = pd.DataFrame([player_info])
+
+    # Si save_csv est True, enregistrer le DataFrame dans un fichier CSV
+    if save_csv:
+        df.to_csv(csv_file_path, index=False)
+        print(f"Données du joueur enregistrées dans le fichier {csv_file_path}")
+
+    return df
+
+# Exemple d'utilisation
+if __name__ == '__main__':
+    df = transform_player('data/xml/player_51041907.xml', save_csv=True)
+    print(df)
