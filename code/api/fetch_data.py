@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import requests
 import uuid
 from datetime import datetime
-
+]
 # Charger les variables d'environnement depuis le fichier .env
 load_dotenv()
 
@@ -29,7 +29,7 @@ def fetch_roster(team_id):
         # Obtenir la date actuelle au format YYYYMMDD
         current_date = datetime.now().strftime('%Y%m%d')
         # Créer un nom de fichier unique avec UUID, team_id, et date
-        file_name = f"{unique_id}_roster_{team_id}_{current_date}.xml"
+        file_name = f"roster_{team_id}_{current_date}_{unique_id}.xml"
         file_path = f'data/xml/{file_name}'
         # Requête pour récupérer le roster
         roster_url = f"{BASE_URL}/roster.aspx?teamid={team_id}"
@@ -80,7 +80,7 @@ def fetch_schedule(team_id):
         current_date = datetime.now().strftime('%Y%m%d')
         
         # Créer un nom de fichier unique avec UUID, team_id, et date
-        file_name = f"{unique_id}_schedule_{team_id}_{current_date}.xml"
+        file_name = f"schedule_{team_id}_{current_date}_{unique_id}.xml"
         file_path = f'data/xml/{file_name}'
         
         # Requête pour récupérer le calendrier
@@ -132,7 +132,7 @@ def fetch_standings(team_id):
         current_date = datetime.now().strftime('%Y%m%d')
         
         # Créer un nom de fichier unique avec UUID, team_id, et date
-        file_name = f"{unique_id}_standings_{team_id}_{current_date}.xml"
+        file_name = f"standings_{team_id}_{current_date}_{unique_id}.xml"
         file_path = f'data/xml/{file_name}'
         
         # Requête pour récupérer le classement
@@ -184,7 +184,7 @@ def fetch_arena(team_id):
         current_date = datetime.now().strftime('%Y%m%d')
         
         # Créer un nom de fichier unique avec UUID, team_id, et date
-        file_name = f"{unique_id}_arena_{team_id}_{current_date}.xml"
+        file_name = f"arena_{team_id}_{current_date}_{unique_id}.xml"
         file_path = f'data/xml/{file_name}'
         
         # Requête pour récupérer le classement
@@ -236,7 +236,7 @@ def fetch_teaminfo(team_id):
         current_date = datetime.now().strftime('%Y%m%d')
         
         # Créer un nom de fichier unique avec UUID, team_id, et date
-        file_name = f"{unique_id}_teaminfo_{team_id}_{current_date}.xml"
+        file_name = f"teaminfo_{team_id}_{current_date}_{unique_id}.xml"
         file_path = f'data/xml/{file_name}'
         
         # Requête pour récupérer le classement
@@ -264,7 +264,7 @@ if __name__ == '__main__':
     team_id = '259167'
     fetch_teaminfo(team_id)
     
-
+### ne recupere pas toute les données a completer avec d'autres fonctions !!!
 def fetch_boxscore(match_id):
     api_key = os.getenv('BUZZERBEATER_API_KEY')
 

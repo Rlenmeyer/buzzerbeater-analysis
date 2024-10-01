@@ -1,0 +1,35 @@
+<bbapi version="1">
+<player id="51041907" owner="259167" retrieved="2024-10-01T09:34:33Z">
+<firstName>Régis</firstName>
+<lastName>Leite</lastName>
+<nationality id="11">France</nationality>
+<age>26</age>
+<height>83</height>
+<dmi>197800</dmi>
+<jersey>3</jersey>
+<salary>57043</salary>
+<bestPosition>PF</bestPosition>
+<seasonDrafted>57</seasonDrafted>
+<leagueDrafted>822</leagueDrafted>
+<teamDrafted>259167</teamDrafted>
+<draftPick>10</draftPick>
+<forSale>0</forSale>
+<skills>
+<gameShape>6</gameShape>
+<potential>7</potential>
+<jumpShot>11</jumpShot>
+<range>5</range>
+<outsideDef>14</outsideDef>
+<handling>16</handling>
+<driving>17</driving>
+<passing>12</passing>
+<insideShot>12</insideShot>
+<insideDef>16</insideDef>
+<rebound>12</rebound>
+<block>10</block>
+<stamina>4</stamina>
+<freeThrow>9</freeThrow>
+<experience>9</experience>
+</skills>
+</player>
+</bbapi>

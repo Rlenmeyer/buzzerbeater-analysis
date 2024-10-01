@@ -1,0 +1,268 @@
+<bbapi version="1">
+<seasons retrieved="2024-10-01T09:33:15Z">
+<season id="1">
+<start>2007-04-02T03:23:29Z</start>
+<finish>2007-07-18T03:49:59Z</finish>
+</season>
+<season id="2">
+<start>2007-07-18T03:49:59Z</start>
+<finish>2007-10-22T20:57:39Z</finish>
+</season>
+<season id="3">
+<start>2007-10-22T20:57:39Z</start>
+<finish>2008-01-29T13:26:18Z</finish>
+</season>
+<season id="4">
+<start>2008-01-29T13:26:18Z</start>
+<finish>2008-05-06T01:27:45Z</finish>
+</season>
+<season id="5">
+<start>2008-05-06T01:27:45Z</start>
+<finish>2008-08-11T19:38:54Z</finish>
+</season>
+<season id="6">
+<start>2008-08-11T19:38:54Z</start>
+<finish>2008-11-17T19:25:15Z</finish>
+</season>
+<season id="7">
+<start>2008-11-17T19:25:15Z</start>
+<finish>2009-02-23T20:02:57Z</finish>
+</season>
+<season id="8">
+<start>2009-02-23T20:02:57Z</start>
+<finish>2009-06-01T18:37:59Z</finish>
+</season>
+<season id="9">
+<start>2009-06-01T18:37:59Z</start>
+<finish>2009-09-07T20:11:42Z</finish>
+</season>
+<season id="10">
+<start>2009-09-07T20:11:42Z</start>
+<finish>2009-12-14T21:57:52Z</finish>
+</season>
+<season id="11">
+<start>2009-12-14T21:57:52Z</start>
+<finish>2010-03-22T18:54:59Z</finish>
+</season>
+<season id="12">
+<start>2010-03-22T18:54:59Z</start>
+<finish>2010-06-28T18:08:09Z</finish>
+</season>
+<season id="13">
+<start>2010-06-28T18:08:09Z</start>
+<finish>2010-10-06T03:43:03Z</finish>
+</season>
+<season id="14">
+<start>2010-10-06T03:43:03Z</start>
+<finish>2011-01-11T02:16:35Z</finish>
+</season>
+<season id="15">
+<start>2011-01-11T02:16:35Z</start>
+<finish>2011-04-18T21:14:33Z</finish>
+</season>
+<season id="16">
+<start>2011-04-18T21:14:33Z</start>
+<finish>2011-07-25T12:51:24Z</finish>
+</season>
+<season id="17">
+<start>2011-07-25T12:51:24Z</start>
+<finish>2011-10-31T11:03:31Z</finish>
+</season>
+<season id="18">
+<start>2011-10-31T11:03:31Z</start>
+<finish>2012-02-06T20:09:52Z</finish>
+</season>
+<season id="19">
+<start>2012-02-06T20:09:52Z</start>
+<finish>2012-05-14T14:15:43Z</finish>
+</season>
+<season id="20">
+<start>2012-05-14T14:15:43Z</start>
+<finish>2012-08-20T21:19:48Z</finish>
+</season>
+<season id="21">
+<start>2012-08-20T21:19:48Z</start>
+<finish>2012-11-27T02:51:21Z</finish>
+</season>
+<season id="22">
+<start>2012-11-27T02:51:21Z</start>
+<finish>2013-03-04T17:42:13Z</finish>
+</season>
+<season id="23">
+<start>2013-03-04T17:42:13Z</start>
+<finish>2013-06-10T18:27:13Z</finish>
+</season>
+<season id="24">
+<start>2013-06-10T18:27:13Z</start>
+<finish>2013-09-16T20:56:35Z</finish>
+</season>
+<season id="25">
+<start>2013-09-16T20:56:35Z</start>
+<finish>2013-12-24T01:18:51Z</finish>
+</season>
+<season id="26">
+<start>2013-12-24T01:18:51Z</start>
+<finish>2014-03-31T20:37:12Z</finish>
+</season>
+<season id="27">
+<start>2014-03-31T20:37:12Z</start>
+<finish>2014-07-08T09:51:08Z</finish>
+</season>
+<season id="28">
+<start>2014-07-08T09:51:08Z</start>
+<finish>2014-10-14T09:09:17Z</finish>
+</season>
+<season id="29">
+<start>2014-10-14T09:09:17Z</start>
+<finish>2015-01-20T11:20:22Z</finish>
+</season>
+<season id="30">
+<start>2015-01-20T11:20:22Z</start>
+<finish>2015-04-27T21:09:26Z</finish>
+</season>
+<season id="31">
+<start>2015-04-27T21:09:26Z</start>
+<finish>2015-08-03T20:38:18Z</finish>
+</season>
+<season id="32">
+<start>2015-08-03T20:38:18Z</start>
+<finish>2015-11-09T18:20:37Z</finish>
+</season>
+<season id="33">
+<start>2015-11-09T18:20:37Z</start>
+<finish>2016-02-15T15:02:36Z</finish>
+</season>
+<season id="34">
+<start>2016-02-15T15:02:36Z</start>
+<finish>2016-05-23T18:02:18Z</finish>
+</season>
+<season id="35">
+<start>2016-05-23T18:02:18Z</start>
+<finish>2016-08-29T21:32:21Z</finish>
+</season>
+<season id="36">
+<start>2016-08-29T21:32:21Z</start>
+<finish>2016-12-05T21:34:04Z</finish>
+</season>
+<season id="37">
+<start>2016-12-05T21:34:04Z</start>
+<finish>2017-03-14T03:06:53Z</finish>
+</season>
+<season id="38">
+<start>2017-03-14T03:06:53Z</start>
+<finish>2017-06-19T19:33:32Z</finish>
+</season>
+<season id="39">
+<start>2017-06-19T19:33:32Z</start>
+<finish>2017-09-26T08:42:16Z</finish>
+</season>
+<season id="40">
+<start>2017-09-26T08:42:16Z</start>
+<finish>2018-01-02T13:09:19Z</finish>
+</season>
+<season id="41">
+<start>2018-01-02T13:09:19Z</start>
+<finish>2018-04-10T09:37:04Z</finish>
+</season>
+<season id="42">
+<start>2018-04-10T09:37:04Z</start>
+<finish>2018-07-17T07:59:11Z</finish>
+</season>
+<season id="43">
+<start>2018-07-17T07:59:12Z</start>
+<finish>2018-10-22T21:25:58Z</finish>
+</season>
+<season id="44">
+<start>2018-10-22T21:25:58Z</start>
+<finish>2019-01-28T23:27:43Z</finish>
+</season>
+<season id="45">
+<start>2019-01-28T23:27:43Z</start>
+<finish>2019-05-06T23:28:39Z</finish>
+</season>
+<season id="46">
+<start>2019-05-06T23:28:39Z</start>
+<finish>2019-08-12T20:44:04Z</finish>
+</season>
+<season id="47">
+<start>2019-08-12T20:44:04Z</start>
+<finish>2019-11-18T16:03:50Z</finish>
+</season>
+<season id="48">
+<start>2019-11-18T16:03:50Z</start>
+<finish>2020-02-24T23:36:36Z</finish>
+</season>
+<season id="49">
+<start>2020-02-24T23:36:36Z</start>
+<finish>2020-06-02T17:36:17Z</finish>
+</season>
+<season id="50">
+<start>2020-06-02T17:36:17Z</start>
+<finish>2020-09-07T21:43:36Z</finish>
+</season>
+<season id="51">
+<start>2020-09-07T21:43:36Z</start>
+<finish>2020-12-15T07:27:18Z</finish>
+</season>
+<season id="52">
+<start>2020-12-15T07:27:18Z</start>
+<finish>2021-03-22T16:38:00Z</finish>
+</season>
+<season id="53">
+<start>2021-03-22T16:38:00Z</start>
+<finish>2021-06-28T14:48:11Z</finish>
+</season>
+<season id="54">
+<start>2021-06-28T14:48:11Z</start>
+<finish>2021-10-04T18:58:49Z</finish>
+</season>
+<season id="55">
+<start>2021-10-04T18:58:49Z</start>
+<finish>2022-01-10T17:20:45Z</finish>
+</season>
+<season id="56">
+<start>2022-01-10T17:20:45Z</start>
+<finish>2022-04-18T12:08:45Z</finish>
+</season>
+<season id="57">
+<start>2022-04-18T12:08:45Z</start>
+<finish>2022-07-25T20:34:56Z</finish>
+</season>
+<season id="58">
+<start>2022-07-25T20:34:56Z</start>
+<finish>2022-10-31T23:32:22Z</finish>
+</season>
+<season id="59">
+<start>2022-10-31T23:32:22Z</start>
+<finish>2023-02-06T17:06:53Z</finish>
+</season>
+<season id="60">
+<start>2023-02-06T17:06:53Z</start>
+<finish>2023-05-15T23:32:27Z</finish>
+</season>
+<season id="61">
+<start>2023-05-15T23:32:27Z</start>
+<finish>2023-08-21T23:17:42Z</finish>
+</season>
+<season id="62">
+<start>2023-08-21T23:17:42Z</start>
+<finish>2023-11-28T11:35:05Z</finish>
+</season>
+<season id="63">
+<start>2023-11-28T11:35:05Z</start>
+<finish>2024-03-05T10:05:53Z</finish>
+</season>
+<season id="64">
+<start>2024-03-05T10:05:53Z</start>
+<finish>2024-06-11T15:00:49Z</finish>
+</season>
+<season id="65">
+<start>2024-06-11T15:00:49Z</start>
+<finish>2024-09-17T06:34:00Z</finish>
+</season>
+<season id="66">
+<start>2024-09-17T06:34:00Z</start>
+<inProgress/>
+</season>
+</seasons>
+</bbapi>

@@ -1,0 +1,28 @@
+<bbapi version="1">
+<economy retrieved="2024-10-01T09:36:21Z">
+<lastWeek start="2024-09-23T01:30:01Z">
+<initial>690872</initial>
+<playerSalaries date="2024-09-23T01:30:01Z">-288348</playerSalaries>
+<staffSalaries date="2024-09-23T01:30:01Z">-22482</staffSalaries>
+<merchandise date="2024-09-23T01:30:01Z">36671</merchandise>
+<scouting date="2024-09-23T01:30:01Z">-5000</scouting>
+<tvMoney date="2024-09-23T01:30:01Z">111333</tvMoney>
+<unknown date="2024-09-23T01:30:01Z">0</unknown>
+<matchRevenue matchid="131319585" date="2024-09-24T17:24:07Z">0</matchRevenue>
+<matchRevenue matchid="132261919" date="2024-09-25T17:23:33Z">25000</matchRevenue>
+<matchRevenue matchid="131317419" date="2024-09-26T17:24:19Z">50000</matchRevenue>
+<matchRevenue matchid="131319593" date="2024-09-28T17:27:09Z">160917</matchRevenue>
+<final>758963</final>
+</lastWeek>
+<thisWeek start="2024-09-30T01:30:00Z">
+<initial>758963</initial>
+<playerSalaries date="2024-09-30T01:30:00Z">-288348</playerSalaries>
+<staffSalaries date="2024-09-30T01:30:00Z">-22826</staffSalaries>
+<merchandise date="2024-09-30T01:30:00Z">37737</merchandise>
+<scouting date="2024-09-30T01:30:00Z">-5000</scouting>
+<tvMoney date="2024-09-30T01:30:00Z">111333</tvMoney>
+<unknown date="2024-09-30T01:30:00Z">0</unknown>
+<current>442789</current>
+</thisWeek>
+</economy>
+</bbapi>
