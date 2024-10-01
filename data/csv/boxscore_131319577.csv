@@ -1,0 +1,21 @@
+team_id,team_name,player_id,first_name,last_name,is_starter,minutes_PG,minutes_SG,minutes_SF,minutes_PF,minutes_C,fgm,fga,tpm,tpa,ftm,fta,oreb,reb,ast,to,stl,blk,pf,pts,rating
+87506,Deadpool,51319919,José,Bello,True,0,38,0,0,0,14,25,7,13,4,5,0,3,1,4,1,0,1,39,14.5
+87506,Deadpool,50527279,Marek,Tyrek,True,0,0,34,0,0,10,22,2,8,2,2,0,5,3,1,0,0,2,24,10
+87506,Deadpool,51321189,Diego,Olmos,True,38,0,0,0,0,4,13,1,6,8,11,1,3,5,0,3,0,3,17,12.5
+87506,Deadpool,49347971,Jarosław,Adamczyk,False,0,0,14,0,0,5,9,3,4,2,2,1,1,0,0,0,0,0,15,11.5
+87506,Deadpool,50900802,Antoine,Delot,True,0,0,0,38,0,4,10,0,1,4,6,7,17,7,1,1,1,3,12,12.5
+87506,Deadpool,52002702,Koraç,Kutlucan,False,0,10,0,0,0,3,5,2,3,3,4,0,0,1,0,0,0,0,11,12
+87506,Deadpool,50571161,Due,Nguyên,True,0,0,0,0,40,2,6,1,2,0,0,2,8,1,1,0,1,2,5,12
+87506,Deadpool,53425400,Mathieu,Fritsch,False,10,0,0,0,0,0,1,0,1,2,2,0,0,3,0,1,0,0,2,9.5
+87506,Deadpool,52988355,Vivian,Sulpice,False,0,0,0,0,8,1,2,0,0,0,0,0,1,0,1,0,0,0,2,8.5
+87506,Deadpool,52512204,Andrej,Vicenčinović,False,0,0,0,10,0,0,1,0,0,1,2,0,3,0,1,0,1,2,1,9.5
+87506,Deadpool,53425368,Jérôme,Bidault,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,N/A
+87506,Deadpool,53750898,Sébastien,Fuzeau,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,N/A
+259167,FoxTreex,51099125,Antanas,Galinauskas,True,0,0,48,0,0,12,21,1,3,0,0,1,8,1,6,2,1,2,25,10
+259167,FoxTreex,51209573,Arkadiy,Dyak,True,0,0,0,47,0,11,18,0,0,3,4,6,17,6,2,3,2,5,25,10.5
+259167,FoxTreex,49041724,Jozef,Mokroš,True,0,38,0,0,0,9,25,4,8,1,1,0,2,6,1,1,1,2,23,14
+259167,FoxTreex,48339430,Siu,Siong Heng,True,37,0,0,0,0,6,9,1,1,0,0,1,4,7,1,0,0,6,13,12
+259167,FoxTreex,51041907,Régis,Leite,True,0,0,0,0,38,4,13,0,0,3,4,4,17,11,3,1,0,0,11,12.5
+259167,FoxTreex,48512165,Ragip,Konca,False,11,0,0,0,0,4,8,0,1,3,4,0,0,6,0,0,0,2,11,13.5
+259167,FoxTreex,51240086,Benjamin,Pomme,False,0,10,0,1,0,4,7,0,0,1,2,0,2,0,0,0,0,3,9,9
+259167,FoxTreex,51792867,Jenő,Bancsó,False,0,0,0,0,10,3,3,0,0,0,0,0,1,0,0,0,1,0,6,13

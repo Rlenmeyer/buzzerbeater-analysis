@@ -38,6 +38,7 @@ If a document returned by BBAPI does not validate against the schema, it must be
 Base URL
 All the BBAPI pages live in the directory http://bbapi.buzzerbeater.com/; for instance, in order to login you should send an HTTP GET request for http://bbapi.buzzerbeater.com/login.aspx?login=yourUserName&code=yourSecurityCode
 
+
 login.aspx
 Must be visited at the beginning of each session.
 Parameters

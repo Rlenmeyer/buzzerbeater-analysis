@@ -265,3 +265,133 @@ def transform_team_info(xml_file_path, save_csv=False, csv_file_path='data/csv/t
 if __name__ == '__main__':
     df = transform_team_info('data/xml/teaminfo_259167.xml', save_csv=True)
     print(df)
+
+
+def transform_boxscore(xml_file_path, save_csv=False, csv_file_path='data/csv/boxscore_131319577.csv'):
+    """
+    Transforme le fichier XML de boxscore en DataFrame et en option, sauvegarde en CSV.
+    
+    :param xml_file_path: Chemin vers le fichier XML de boxscore.
+    :param save_csv: Si True, enregistre les données en CSV (par défaut False).
+    :param csv_file_path: Chemin du fichier CSV de sortie (utilisé si save_csv=True).
+    :return: DataFrame des performances des joueurs.
+    """
+    
+    # Charger le fichier XML
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+
+    # Créer une liste vide pour stocker les données des joueurs
+    player_data = []
+
+    # Parcourir les équipes (homeTeam et awayTeam)
+    for team in root.findall(".//teamName/.."):
+        team_name = team.find('teamName').text
+        team_id = team.attrib['id']
+
+        # Parcourir chaque joueur dans le boxscore
+        for player in team.findall(".//player"):
+            player_info = {
+                'team_id': team_id,
+                'team_name': team_name,
+                'player_id': player.attrib['id'],
+                'first_name': player.find('firstName').text,
+                'last_name': player.find('lastName').text,
+                'is_starter': player.find('isStarter').text,
+                'minutes_PG': player.find('minutes/PG').text if player.find('minutes/PG') is not None else 0,
+                'minutes_SG': player.find('minutes/SG').text if player.find('minutes/SG') is not None else 0,
+                'minutes_SF': player.find('minutes/SF').text if player.find('minutes/SF') is not None else 0,
+                'minutes_PF': player.find('minutes/PF').text if player.find('minutes/PF') is not None else 0,
+                'minutes_C': player.find('minutes/C').text if player.find('minutes/C') is not None else 0,
+                'fgm': player.find('performance/fgm').text,
+                'fga': player.find('performance/fga').text,
+                'tpm': player.find('performance/tpm').text,
+                'tpa': player.find('performance/tpa').text,
+                'ftm': player.find('performance/ftm').text,
+                'fta': player.find('performance/fta').text,
+                'oreb': player.find('performance/oreb').text,
+                'reb': player.find('performance/reb').text,
+                'ast': player.find('performance/ast').text,
+                'to': player.find('performance/to').text,
+                'stl': player.find('performance/stl').text,
+                'blk': player.find('performance/blk').text,
+                'pf': player.find('performance/pf').text,
+                'pts': player.find('performance/pts').text,
+                'rating': player.find('performance/rating').text
+            }
+
+            # Ajouter les informations du joueur à la liste
+            player_data.append(player_info)
+
+    # Convertir la liste en DataFrame
+    df = pd.DataFrame(player_data)
+
+    # Si save_csv est True, enregistrer le DataFrame dans un fichier CSV
+    if save_csv:
+        df.to_csv(csv_file_path, index=False)
+        print(f"Données de boxscore enregistrées dans le fichier {csv_file_path}")
+
+    return df
+
+# Exemple d'utilisation
+if __name__ == '__main__':
+    df = transform_boxscore('data/xml/boxscore.xml', save_csv=True)
+    print(df)
+
+
+def transform_team_stats(xml_file_path, save_csv=False, csv_file_path='data/csv/teamstats_259167.csv'):
+    """
+    Transforme le fichier XML des statistiques d'équipe en DataFrame et en option, sauvegarde en CSV.
+    
+    :param xml_file_path: Chemin vers le fichier XML des statistiques d'équipe.
+    :param save_csv: Si True, enregistre les données en CSV (par défaut False).
+    :param csv_file_path: Chemin du fichier CSV de sortie (utilisé si save_csv=True).
+    :return: DataFrame des statistiques des joueurs.
+    """
+    
+    # Charger le fichier XML
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+
+    # Créer une liste vide pour stocker les données des joueurs
+    player_stats_data = []
+
+    # Parcourir les joueurs dans le fichier XML
+    for player in root.findall(".//player"):
+        player_info = {
+            'player_id': player.attrib['id'],
+            'first_name': player.find('firstName').text,
+            'last_name': player.find('lastName').text,
+            'games': int(player.find('stats/games').text),
+            'mpg': float(player.find('stats/mpg').text),
+            'fgPerc': float(player.find('stats/fgPerc').text),
+            'tpPerc': float(player.find('stats/tpPerc').text),
+            'ftPerc': float(player.find('stats/ftPerc').text),
+            'orpg': float(player.find('stats/orpg').text),
+            'rpg': float(player.find('stats/rpg').text),
+            'apg': float(player.find('stats/apg').text),
+            'topg': float(player.find('stats/topg').text),
+            'spg': float(player.find('stats/spg').text),
+            'bpg': float(player.find('stats/bpg').text),
+            'ppg': float(player.find('stats/ppg').text),
+            'fpg': float(player.find('stats/fpg').text),
+            'rating': float(player.find('stats/rating').text)
+        }
+
+        # Ajouter les informations du joueur à la liste
+        player_stats_data.append(player_info)
+
+    # Convertir la liste en DataFrame
+    df = pd.DataFrame(player_stats_data)
+
+    # Si save_csv est True, enregistrer le DataFrame dans un fichier CSV
+    if save_csv:
+        df.to_csv(csv_file_path, index=False)
+        print(f"Données des statistiques d'équipe enregistrées dans le fichier {csv_file_path}")
+
+    return df
+
+# Exemple d'utilisation
+if __name__ == '__main__':
+    df = transform_team_stats('data/xml/teamstats_259167.xml', save_csv=True)
+    print(df)
