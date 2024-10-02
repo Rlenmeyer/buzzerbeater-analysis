@@ -119,6 +119,7 @@ if __name__ == '__main__':
     df = transform_schedule('data/xml/schedule_259167.xml', save_csv=True)
     print(df)
 
+# add league id in standings csv
 def transform_standings(xml_file_path, save_csv=False, csv_file_path='data/csv/standings_259167.csv'):
     """
     Transforme le fichier XML des standings en DataFrame et en option, sauvegarde en CSV.
@@ -266,7 +267,7 @@ if __name__ == '__main__':
     df = transform_team_info('data/xml/teaminfo_259167.xml', save_csv=True)
     print(df)
 
-
+# add match id in boxscore csv
 def transform_boxscore(xml_file_path, save_csv=False, csv_file_path='data/csv/boxscore_131319577.csv'):
     """
     Transforme le fichier XML de boxscore en DataFrame et en option, sauvegarde en CSV.
