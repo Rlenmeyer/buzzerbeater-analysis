@@ -119,7 +119,7 @@ if __name__ == '__main__':
     df = transform_schedule('data/xml/schedule_259167.xml', save_csv=True)
     print(df)
 
-# add league id in standings csv
+# add league id and conference in standings csv
 def transform_standings(xml_file_path, save_csv=False, csv_file_path='data/csv/standings_259167.csv'):
     """
     Transforme le fichier XML des standings en DataFrame et en option, sauvegarde en CSV.
